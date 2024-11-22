@@ -1,4 +1,5 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtWidgets import *
 import sys
 import res_rc
 
@@ -8,7 +9,7 @@ import res_rc
 # --------------------------------------------------------------------------------------------------------------------
 
 
-class Ui_LoginWindow(object):
+class Ui_LoginWindow:
     def setupUi(self, LoginWindow):
         LoginWindow.setObjectName("LoginWindow")
         LoginWindow.resize(700, 400)
@@ -172,13 +173,13 @@ class Ui_LoginWindow(object):
 # --------------------------------------------------------------------------------------------------------------------
 
 
-class Ui_help_page(object):
+class Ui_help_page:
     def setupUi(self, help_page):
         help_page.setObjectName("help_page")
         help_page.resize(1350, 900)
         help_page.setMinimumSize(QtCore.QSize(1350, 900))
         help_page.setMaximumSize(QtCore.QSize(1350, 900))
-        help_page.setStyleSheet("background-color: rgb(255, 255, 255);\n" "")
+        help_page.setStyleSheet("background-color: rgb(210, 255, 255);\n" "")
         self.centralwidget = QtWidgets.QWidget(parent=help_page)
         self.centralwidget.setObjectName("centralwidget")
         self.label_topbanner = QtWidgets.QLabel(parent=self.centralwidget)
@@ -577,7 +578,7 @@ class Ui_help_page(object):
         self.label_votebutt = QtWidgets.QLabel(parent=self.frame_help3)
         self.label_votebutt.setGeometry(QtCore.QRect(890, 80, 161, 61))
         font = QtGui.QFont()
-        font.setPointSize(-1)
+        font.setPointSize(1)
         font.setBold(True)
         font.setWeight(75)
         self.label_votebutt.setFont(font)
@@ -696,7 +697,7 @@ class Ui_help_page(object):
 # --------------------------------------------------------------------------------------------------------------------
 # Ballot Selections Page
 # --------------------------------------------------------------------------------------------------------------------
-class Ui_ballot(object):
+class Ui_ballot:
     def setupUi(self, ballot):
         ballot.setObjectName("ballot")
         ballot.resize(1350, 900)
@@ -720,7 +721,7 @@ class Ui_ballot(object):
         self.pushButton_voteballot = QtWidgets.QPushButton(parent=self.centralwidget)
         self.pushButton_voteballot.setGeometry(QtCore.QRect(570, 790, 251, 61))
         font = QtGui.QFont()
-        font.setPointSize(-1)
+        font.setPointSize(1)
         font.setBold(True)
         font.setWeight(75)
         self.pushButton_voteballot.setFont(font)
@@ -765,7 +766,7 @@ class Ui_ballot(object):
         self.label_bottombanner_2.setObjectName("label_bottombanner_2")
         self.frame_pres = QtWidgets.QFrame(parent=self.centralwidget)
         self.frame_pres.setGeometry(QtCore.QRect(80, 90, 381, 311))
-        self.frame_pres.setStyleSheet("background-color: rgb(10, 185, 238);")
+        self.frame_pres.setStyleSheet("background-color: rgb(25, 25, 80);")
         self.frame_pres.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_pres.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_pres.setObjectName("frame_pres")
@@ -877,9 +878,10 @@ class Ui_ballot(object):
         self.lineEdit_preswritein.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.lineEdit_preswritein.setObjectName("lineEdit_preswritein")
         self.verticalLayout_pres.addWidget(self.frame_preswritein)
+
         self.frame_senate = QtWidgets.QFrame(parent=self.centralwidget)
         self.frame_senate.setGeometry(QtCore.QRect(480, 90, 381, 311))
-        self.frame_senate.setStyleSheet("background-color: rgb(10, 185, 238);")
+        self.frame_senate.setStyleSheet("background-color: rgb(25, 25, 80);")
         self.frame_senate.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_senate.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_senate.setObjectName("frame_senate")
@@ -986,9 +988,10 @@ class Ui_ballot(object):
         self.lineEdit_senwritein.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.lineEdit_senwritein.setObjectName("lineEdit_senwritein")
         self.verticalLayout_senate.addWidget(self.frame_senwritein)
+
         self.frame_house = QtWidgets.QFrame(parent=self.centralwidget)
         self.frame_house.setGeometry(QtCore.QRect(880, 90, 381, 311))
-        self.frame_house.setStyleSheet("background-color: rgb(10, 185, 238);")
+        self.frame_house.setStyleSheet("background-color: rgb(25, 25, 80);")
         self.frame_house.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_house.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_house.setObjectName("frame_house")
@@ -1106,7 +1109,7 @@ class Ui_ballot(object):
         self.pushButton_back.setFont(font)
         self.pushButton_back.setStyleSheet(
             "QPushButton#pushButton_back {\n"
-            "    background-color: rgb(240, 240, 0, 255);\n"
+            "    background-color: rgb(240, 240, 0);\n"
             "    color: rgb(25, 25, 80);\n"
             "    border-radius: 5px;  \n"
             "}\n"
@@ -1149,13 +1152,13 @@ class Ui_ballot(object):
         self.label_presopt1.setText(
             _translate(
                 "ballot",
-                "DONALD J. TRUMP For President and                                            JD VANCE For Vice President Republican Party Nominee",
+                "DONALD J. TRUMP For President and JD VANCE For Vice President Republican Party Nominee",
             )
         )
         self.label_presopt2.setText(
             _translate(
                 "ballot",
-                "KAMALA D. HARRIS For President and                                           TIM WALZ For Vice President Democratic Party Nominee",
+                "KAMALA D. HARRIS For President and TIM WALZ For Vice President Democratic Party Nominee",
             )
         )
         self.label_preswritein.setText(_translate("ballot", "Write-in"))
@@ -1178,6 +1181,33 @@ class Ui_ballot(object):
         )
         self.label_housewritein.setText(_translate("ballot", "Write-in"))
         self.pushButton_back.setText(_translate("ballot", "←"))
+
+
+# --------------------------------------------------------------------------------------------------------------------
+# Ending notification box
+# --------------------------------------------------------------------------------------------------------------------
+class Ui_notice_box:
+    def setupUi(self, notice_box):
+        notice_box.setWindowTitle("Notice")
+        notice_box.setIcon(QMessageBox.Icon.Information)
+
+        # Label for the message (this will be the message text)
+        self.label_notification = QLabel(notice_box)
+        self.label_notification.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_notification.setWordWrap(True)
+
+        notice_box.setText("This is a placeholder notification.")
+
+        # Add standard buttons (you can add custom buttons if needed)
+        notice_box.setStandardButtons(QMessageBox.StandardButton.Ok)
+
+    def retranslateUi(self, notice_box):
+        _translate = QtCore.QCoreApplication.translate
+        # Set dynamic text if needed
+        notice_box.setWindowTitle(_translate("notice_box", "Notice"))
+        self.label_notification.setText(
+            _translate("notice_box", "This is a placeholder notification.")
+        )
 
 
 if __name__ == "__main__":
