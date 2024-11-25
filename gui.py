@@ -10,7 +10,13 @@ import res_rc
 
 
 class Ui_LoginWindow:
-    def setupUi(self, LoginWindow):
+    def setupUi(self, LoginWindow) -> None:
+        """
+        Sets up the UI components for the login widget.
+
+        Args:
+            LoginWindow (QWidget): The QWidget instance to configure.
+        """
         LoginWindow.setObjectName("LoginWindow")
         LoginWindow.resize(700, 400)
         LoginWindow.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
@@ -23,104 +29,104 @@ class Ui_LoginWindow:
 
         self.widget = QtWidgets.QWidget(parent=self.centralwidget)
         self.widget.setStyleSheet(
-            "QPushButton#pushButton{\n"
+            "QPushButton#pushButton_Login{\n"
             "    background-color: qlineargradient(spread:pad, x1:0, y1:0.505682, x2:1, y2:0.477, stop:0 rgba(20, 47, 78, 219), stop:1 rgba(85, 98, 112, 226));\n"
             "    color:rgba(255, 255, 255, 210);\n"
             "    border-radius: 5px;\n"
             "}\n"
-            "QPushButton#pushButton:hover{\n"
+            "QPushButton#pushButton_Login:hover{\n"
             "    background-color: qlineargradient(spread:pad, x1:0, y1:0.505682, x2:1, y2:0.477, stop:0 rgba(40, 67, 98, 219), stop:1 rgba(105, 188, 132, 226));\n"
             "}\n"
-            "QPushButton#pushButton:pressed{\n"
+            "QPushButton#pushButton_Login:pressed{\n"
             "    padding-left:5px;\n"
             "    padding-top:5px;\n"
             "    background-color:rgba(105, 118, 132, 200);\n"
             "}"
         )
 
-        self.label = QtWidgets.QLabel(parent=self.widget)
-        self.label.setGeometry(QtCore.QRect(30, 20, 600, 290))
-        self.label.setStyleSheet(
+        self.label_Background1 = QtWidgets.QLabel(parent=self.widget)
+        self.label_Background1.setGeometry(QtCore.QRect(30, 20, 600, 290))
+        self.label_Background1.setStyleSheet(
             "border-image: url(:/Images/flag.jpg);\n" "border-radius: 20px;"
         )
-        self.label.setText("")
-        self.label.setObjectName("label")
+        self.label_Background1.setText("")
+        self.label_Background1.setObjectName("label_Background1")
 
-        self.label_2 = QtWidgets.QLabel(parent=self.widget)
-        self.label_2.setGeometry(QtCore.QRect(30, 20, 600, 290))
-        self.label_2.setStyleSheet(
+        self.label_Background2 = QtWidgets.QLabel(parent=self.widget)
+        self.label_Background2.setGeometry(QtCore.QRect(30, 20, 600, 290))
+        self.label_Background2.setStyleSheet(
             "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.715909, stop:0 rgba(0, 0, 0, 9), stop:0.375 rgba(0, 0, 0, 50), stop: 0.835227 rgba(0, 0, 0, 75));\n"
             "border-radius: 20px;"
         )
-        self.label_2.setText("")
-        self.label_2.setObjectName("label_2")
+        self.label_Background2.setText("")
+        self.label_Background2.setObjectName("label_Background2")
 
-        self.label_3 = QtWidgets.QLabel(parent=self.widget)
-        self.label_3.setGeometry(QtCore.QRect(40, 40, 570, 260))
-        self.label_3.setStyleSheet(
+        self.label_Background3 = QtWidgets.QLabel(parent=self.widget)
+        self.label_Background3.setGeometry(QtCore.QRect(40, 40, 570, 260))
+        self.label_Background3.setStyleSheet(
             "background-color: rgba(0, 0, 0, 100);\n" "border-radius: 15px;"
         )
-        self.label_3.setObjectName("label_3")
+        self.label_Background3.setObjectName("label_Background3")
 
-        self.label_4 = QtWidgets.QLabel(parent=self.widget)
-        self.label_4.setGeometry(QtCore.QRect(180, 40, 301, 50))
+        self.label_Header = QtWidgets.QLabel(parent=self.widget)
+        self.label_Header.setGeometry(QtCore.QRect(180, 40, 301, 50))
         font = QtGui.QFont("Arial")
         font.setPointSize(20)
         font.setBold(True)
         font.setUnderline(False)
         font.setWeight(75)
-        self.label_4.setFont(font)
-        self.label_4.setStyleSheet("color:rgba(255, 255, 255, 210);")
-        self.label_4.setObjectName("label_4")
+        self.label_Header.setFont(font)
+        self.label_Header.setStyleSheet("color:rgba(255, 255, 255, 210);")
+        self.label_Header.setObjectName("label_Header")
 
-        self.lineEdit = QtWidgets.QLineEdit(parent=self.widget)
-        self.lineEdit.setGeometry(QtCore.QRect(220, 130, 211, 31))
+        self.lineEdit_ID = QtWidgets.QLineEdit(parent=self.widget)
+        self.lineEdit_ID.setGeometry(QtCore.QRect(220, 130, 211, 31))
         font = QtGui.QFont("Arial")
         font.setPointSize(12)
-        self.lineEdit.setFont(font)
-        self.lineEdit.setStyleSheet(
+        self.lineEdit_ID.setFont(font)
+        self.lineEdit_ID.setStyleSheet(
             "background-color:rgba(0, 0, 0, 0);\n"
             "border:none;\n"
             "border-bottom: 2px solid rgba(105, 118, 132, 255);\n"
             "color:rgba(255, 255, 255, 230);\n"
             "padding-bottom: 7px"
         )
-        self.lineEdit.setObjectName("lineEdit")
+        self.lineEdit_ID.setObjectName("lineEdit_ID")
 
-        self.lineEdit_2 = QtWidgets.QLineEdit(parent=self.widget)
-        self.lineEdit_2.setGeometry(QtCore.QRect(220, 190, 211, 31))
+        self.lineEdit_Pin = QtWidgets.QLineEdit(parent=self.widget)
+        self.lineEdit_Pin.setGeometry(QtCore.QRect(220, 190, 211, 31))
         font = QtGui.QFont("Arial")
         font.setPointSize(12)
-        self.lineEdit_2.setFont(font)
-        self.lineEdit_2.setStyleSheet(
+        self.lineEdit_Pin.setFont(font)
+        self.lineEdit_Pin.setStyleSheet(
             "background-color:rgba(0, 0, 0, 0);\n"
             "border:none;\n"
             "border-bottom: 2px solid rgba(105, 118, 132, 255);\n"
             "color:rgba(255, 255, 255, 230);\n"
             "padding-bottom: 7px"
         )
-        self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
-        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.lineEdit_Pin.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
+        self.lineEdit_Pin.setObjectName("lineEdit_Pin")
 
         # Button (Login button)
-        self.pushButton = QtWidgets.QPushButton(parent=self.widget)
-        self.pushButton.setGeometry(QtCore.QRect(220, 240, 211, 41))
+        self.pushButton_Login = QtWidgets.QPushButton(parent=self.widget)
+        self.pushButton_Login.setGeometry(QtCore.QRect(220, 240, 211, 41))
         font = QtGui.QFont("Arial")
         font.setPointSize(15)
-        self.pushButton.setFont(font)
-        self.pushButton.setObjectName("pushButton")
+        self.pushButton_Login.setFont(font)
+        self.pushButton_Login.setObjectName("pushButton_Login")
 
         # Error message label
-        self.label_5 = QtWidgets.QLabel(parent=self.widget)
-        self.label_5.setGeometry(QtCore.QRect(220, 90, 211, 31))
-        self.label_5.setStyleSheet(
+        self.label_Err = QtWidgets.QLabel(parent=self.widget)
+        self.label_Err.setGeometry(QtCore.QRect(220, 90, 211, 31))
+        self.label_Err.setStyleSheet(
             "background-color: rgb(255, 193, 174);\n"
             "border: 1px solid;\n"
             "border-color:rgb(255, 0, 0);"
         )
-        self.label_5.setText("")
-        self.label_5.setObjectName("label_5")
-        self.label_5.setVisible(False)
+        self.label_Err.setText("")
+        self.label_Err.setObjectName("label_Err")
+        self.label_Err.setVisible(False)
 
         layout.addWidget(self.widget)
 
@@ -128,7 +134,7 @@ class Ui_LoginWindow:
 
         LoginWindow.setLayout(layout)
 
-        self.label.setGraphicsEffect(
+        self.label_Background1.setGraphicsEffect(
             QtWidgets.QGraphicsDropShadowEffect(
                 blurRadius=25,
                 xOffset=0,
@@ -137,7 +143,7 @@ class Ui_LoginWindow:
             )
         )
 
-        self.label_3.setGraphicsEffect(
+        self.label_Background3.setGraphicsEffect(
             QtWidgets.QGraphicsDropShadowEffect(
                 blurRadius=25,
                 xOffset=0,
@@ -146,7 +152,7 @@ class Ui_LoginWindow:
             )
         )
 
-        self.pushButton.setGraphicsEffect(
+        self.pushButton_Login.setGraphicsEffect(
             QtWidgets.QGraphicsDropShadowEffect(
                 blurRadius=25,
                 xOffset=3,
@@ -158,14 +164,20 @@ class Ui_LoginWindow:
         self.retranslateUi(LoginWindow)
         QtCore.QMetaObject.connectSlotsByName(LoginWindow)
 
-    def retranslateUi(self, LoginWindow):
+    def retranslateUi(self, LoginWindow) -> None:
+        """
+        Sets up the UI components for the login widget.
+
+        Args:
+            LoginWindow (QWidget): The QWidget instance to configure.
+        """
         _translate = QtCore.QCoreApplication.translate
         LoginWindow.setWindowTitle(_translate("LoginWindow", "Login Window"))
-        self.label_3.setText(_translate("LoginWindow", "TextLabel"))
-        self.label_4.setText(_translate("LoginWindow", "Federal Ballot Service"))
-        self.lineEdit.setPlaceholderText(_translate("LoginWindow", "Voter ID"))
-        self.lineEdit_2.setPlaceholderText(_translate("LoginWindow", "PIN"))
-        self.pushButton.setText(_translate("LoginWindow", "Login"))
+        self.label_Background3.setText(_translate("LoginWindow", "TextLabel"))
+        self.label_Header.setText(_translate("LoginWindow", "Federal Ballot Service"))
+        self.lineEdit_ID.setPlaceholderText(_translate("LoginWindow", "Voter ID"))
+        self.lineEdit_Pin.setPlaceholderText(_translate("LoginWindow", "PIN"))
+        self.pushButton_Login.setText(_translate("LoginWindow", "Login"))
 
 
 # --------------------------------------------------------------------------------------------------------------------
@@ -174,7 +186,13 @@ class Ui_LoginWindow:
 
 
 class Ui_help_page:
-    def setupUi(self, help_page):
+    def setupUi(self, help_page) -> None:
+        """
+        Sets up the UI components for the help page.
+
+        Args:
+            help_page (QMainWindow): The QMainWindow instance to configure.
+        """
         help_page.setObjectName("help_page")
         help_page.resize(1350, 900)
         help_page.setMinimumSize(QtCore.QSize(1350, 900))
@@ -646,7 +664,13 @@ class Ui_help_page:
         self.retranslateUi(help_page)
         QtCore.QMetaObject.connectSlotsByName(help_page)
 
-    def retranslateUi(self, help_page):
+    def retranslateUi(self, help_page) -> None:
+        """
+        Handles translation or dynamic updates to the UI elements.
+
+        Args:
+            help_page (QMainWindow): The QMainWindow instance to update.
+        """
         _translate = QtCore.QCoreApplication.translate
         help_page.setWindowTitle(_translate("help_page", "MainWindow"))
         self.label_topbanner.setText(
@@ -698,7 +722,13 @@ class Ui_help_page:
 # Ballot Selections Page
 # --------------------------------------------------------------------------------------------------------------------
 class Ui_ballot:
-    def setupUi(self, ballot):
+    def setupUi(self, ballot) -> None:
+        """
+        Sets up the UI components for the ballot page.
+
+        Args:
+            ballot (QMainWindow): The QMainWindow instance to configure.
+        """
         ballot.setObjectName("ballot")
         ballot.resize(1350, 900)
         ballot.setMinimumSize(QtCore.QSize(1350, 900))
@@ -1142,7 +1172,13 @@ class Ui_ballot:
         self.retranslateUi(ballot)
         QtCore.QMetaObject.connectSlotsByName(ballot)
 
-    def retranslateUi(self, ballot):
+    def retranslateUi(self, ballot) -> None:
+        """
+        Sets up translations or dynamic text for the ballot UI components.
+
+        Args:
+        ballot (QMainWindow): The main window representing the ballot UI.
+        """
         _translate = QtCore.QCoreApplication.translate
         ballot.setWindowTitle(_translate("ballot", "MainWindow"))
         self.pushButton_voteballot.setText(_translate("ballot", "Cast Your Vote"))
@@ -1187,23 +1223,30 @@ class Ui_ballot:
 # Ending notification box
 # --------------------------------------------------------------------------------------------------------------------
 class Ui_notice_box:
-    def setupUi(self, notice_box):
+    def setupUi(self, notice_box) -> None:
+        """
+        Sets up the UI components for the notice box.
+
+        Args:
+            notice_box (QMessageBox): The QMessageBox instance to configure.
+        """
         notice_box.setWindowTitle("Notice")
         notice_box.setIcon(QMessageBox.Icon.Information)
 
-        # Label for the message (this will be the message text)
         self.label_notification = QLabel(notice_box)
         self.label_notification.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_notification.setWordWrap(True)
-
         notice_box.setText("This is a placeholder notification.")
-
-        # Add standard buttons (you can add custom buttons if needed)
         notice_box.setStandardButtons(QMessageBox.StandardButton.Ok)
 
-    def retranslateUi(self, notice_box):
+    def retranslateUi(self, notice_box) -> None:
+        """
+        Handles translation or dynamic updates to the UI elements.
+
+        Args:
+            notice_box (QMessageBox): The QMessageBox instance to update.
+        """
         _translate = QtCore.QCoreApplication.translate
-        # Set dynamic text if needed
         notice_box.setWindowTitle(_translate("notice_box", "Notice"))
         self.label_notification.setText(
             _translate("notice_box", "This is a placeholder notification.")

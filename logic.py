@@ -50,9 +50,6 @@ class Logic:
             & ~Qt.WindowType.WindowMaximizeButtonHint
         )
 
-        # Initialize CSV if it doesn't exist
-        self.initialize_vote_data()
-
     # --------------------------------------------------------------------------------------------------------------------
     # Functions controlling the separate pages and their connections
     # --------------------------------------------------------------------------------------------------------------------
@@ -77,10 +74,14 @@ class Logic:
         print("Setting up login page...")
 
         self.ui_login.setupUi(self.window_login)
-        print(f"Connecting {self.ui_login.pushButton.objectName()} to validate_login")
+        print(
+            f"Connecting {self.ui_login.pushButton_Login.objectName()} to validate_login"
+        )
 
-        self.ui_login.pushButton.clicked.connect(self.validate_login)
-        print(f"Connection established for {self.ui_login.pushButton.objectName()}")
+        self.ui_login.pushButton_Login.clicked.connect(self.validate_login)
+        print(
+            f"Connection established for {self.ui_login.pushButton_Login.objectName()}"
+        )
 
         self.window_login.show()
 
@@ -182,10 +183,13 @@ class Logic:
     def validate_login(self) -> None:
         """Validates user login credentials."""
 
+        print("Initializing vote data file...")
+        self.initialize_vote_data()
+
         print("Validating login credentials.")
 
-        voter_id = self.ui_login.lineEdit.text().strip()
-        pin = self.ui_login.lineEdit_2.text().strip()
+        voter_id = self.ui_login.lineEdit_ID.text().strip()
+        pin = self.ui_login.lineEdit_Pin.text().strip()
         print("Voter ID: {voter_id}, PIN: {pin}")
 
         try:
@@ -198,14 +202,18 @@ class Logic:
                             return
                         self.window_login.close()
                         self.show_help_page()
+                        self.ui_login.label_Err.setVisible(False)
+                        self.ui_login.lineEdit_Pin.clear()
+                        self.ui_login.lineEdit_ID.clear()
+                        self.ui_login.lineEdit_ID.setFocus()
                         return
                     else:
-                        self.ui_login.label_5.setText("Incorrect PIN entered")
-                        self.ui_login.label_5.setVisible(True)
+                        self.ui_login.label_Err.setText("Incorrect PIN entered")
+                        self.ui_login.label_Err.setVisible(True)
                         return
 
-            self.ui_login.label_5.setText("Voter ID not registered")
-            self.ui_login.label_5.setVisible(True)
+            self.ui_login.label_Err.setText("Voter ID not registered")
+            self.ui_login.label_Err.setVisible(True)
         except FileNotFoundError:
             self.display_error("Login credentials file is missing.")
         except Exception as e:
