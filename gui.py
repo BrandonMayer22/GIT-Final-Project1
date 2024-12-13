@@ -123,6 +123,7 @@ class Ui_LoginWindow:
             "background-color: rgb(255, 193, 174);\n"
             "border: 1px solid;\n"
             "border-color:rgb(255, 0, 0);"
+            "color: red;"
         )
         self.label_Err.setText("")
         self.label_Err.setObjectName("label_Err")
